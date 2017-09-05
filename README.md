@@ -2,7 +2,7 @@
 基于Struts框架实现员工管理系统
 
 1.导入struts包
-[java] view plain copy
+
 c3p0-0.9.1.2.jar  
 commons-beanutils-1.8.3.jar  
 commons-dbutils-1.6.jar  
@@ -16,7 +16,7 @@ ognl-3.0.5.jar
 struts2-core-2.3.4.1.jar  
 xwork-core-2.3.4.1.jar  
 2.web.xml配置
-[html] view plain copy
+
 <?xml version="1.0" encoding="UTF-8"?>  
 <web-app version="2.5"   
     xmlns="http://java.sun.com/xml/ns/javaee"   
@@ -36,7 +36,7 @@ xwork-core-2.3.4.1.jar
 </web-app>  
 
 3.stuts.xml配置
-[java] view plain copy
+
 <?xml version="1.0" encoding="UTF-8" ?>  
   
 <!DOCTYPE struts PUBLIC  
@@ -98,5 +98,3 @@ xwork-core-2.3.4.1.jar
    </named-config>  
   
 </c3p0-config>  
-
-5.原码目录结构：
