@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<!-- START SNIPPET: xworkSample -->
+<struts>
+
+	<!-- 更改主题 -->
+	<constant name="struts.ui.theme" value="simple"></constant>
+	<package name="emp" extends="struts-default">
+		<global-results>
+			<result name="error">/error/error.jsp</result>
+		</global-results>
+		
+		<action name="emp_*" class="com.bxh.action.EmployeeAction" method="{1}">
+			<!--一、 防表单重复提交，二、配置防表单重复提交拦截器 -->
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<interceptor-ref name="token">
+				<!-- 三、指定拦截器那些方法需要 -->
+				<param name="includeMethods">save</param>
+			</interceptor-ref>
+			
+			<result name="invalid.token" type="redirectAction">emp_list</result>
+			
+			<result name="list">/WEB-INF/list.jsp</result>
+			<result name="update">/WEB-INF/update.jsp</result>
+			<result name="addsuccess" type="redirectAction">emp_list</result>
+		</action>
+	
+	</package>
+
+</struts>
+
+<!-- END SNIPPET: xworkSample -->
+
